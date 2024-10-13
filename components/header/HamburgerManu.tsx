@@ -1,23 +1,9 @@
 import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet";
 import Image from "next/image";
 import Link from "next/link";
-import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {Button} from "@/components/ui/button";
-
-const shopSubMenu: {title: string, url: string}[] = [
-    {
-        title: "electronics",
-        url: "/shop/electronics"
-    },
-    {
-        title: "jewelery",
-        url: "/shop/jewelery"
-    },
-    {
-        title: "men's clothing",
-        url: "/shop/clothing"
-    },
-]
+import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
+import {menu} from "@/lib/headerMenuData";
 
 export const HamburgerManu = () => {
     return (
@@ -27,43 +13,44 @@ export const HamburgerManu = () => {
             </SheetTrigger>
             <SheetContent>
                 <Accordion collapsible type={"single"} className={"w-3/4 ml-3"}>
-                    <nav>
-                        {/*item 1*/}
-                        <AccordionItem value={"Home"}>
-                            <Link href={"/"} className={"flex flex-1 py-4 text-sm font-medium transition-all hover:underline hover:text-rose-700"}>Home</Link>
-                        </AccordionItem>
-                        {/*item 2*/}
-                        <AccordionItem value={"shop"}>
-                            <AccordionTrigger className={"hover:text-rose-700"}>
-                                Shop
-                            </AccordionTrigger>
-                            <AccordionContent>
-                                <ul className={"px-3 sm:px-4"}>
+                    {
+                        menu.map((item) => (
+                            <>
+                                <AccordionItem value={item.title}>
                                     {
-                                        shopSubMenu.map((item, i) => (
-                                            <Link href={item.url} key={item.title} passHref>
-                                                <li className={`text-sm font-medium py-3 sm:py-4 hover:text-rose-700 transition-all ${i < shopSubMenu.length-1 && "border-b"}`}>
+                                        item.subMenu.length > 0 ?
+                                            <>
+                                                <AccordionTrigger className={"hover:text-rose-700"}>
                                                     {item.title}
-                                                </li>
+                                                </AccordionTrigger>
+                                                <AccordionContent>
+                                                    <ul className={"px-3 sm:px-4"}>
+                                                        {
+                                                            item.subMenu.map((subMenu, i) => (
+                                                                <Link href={subMenu.url} key={subMenu.title}
+                                                                      passHref>
+                                                                    <li className={`text-sm font-medium py-3 sm:py-4 hover:text-rose-700 transition-all ${i < item.subMenu.length - 1 && "border-b"}`}>
+                                                                        {subMenu.title}
+                                                                    </li>
+                                                                </Link>
+                                                            ))
+                                                        }
+                                                    </ul>
+                                                </AccordionContent>
+                                            </> :
+                                            <Link href={item.url}
+                                                  className={"flex flex-1 py-4 text-sm font-medium transition-all hover:underline hover:text-rose-700"}>
+                                                {item.title}
                                             </Link>
-                                        ))
                                     }
-                                </ul>
-                            </AccordionContent>
-                        </AccordionItem>
-                        {/*item 3*/}
-                        <AccordionItem value={"contact"}>
-                            <Link href={"/contact"} className={"flex flex-1 py-4 text-sm font-medium transition-all hover:underline hover:text-rose-700"}>Contact Us</Link>
-                        </AccordionItem>
-                        {/*item 4*/}
-                        <AccordionItem value={"blog"}>
-                            <Link href={"/blog"} className={"flex flex-1 py-4 text-sm font-medium transition-all hover:underline hover:text-rose-700"}>Blog</Link>
-                        </AccordionItem>
-                        <Button asChild className={"mt-7 px-4 mx-auto"}>
-                            <Link href={"/auth"}>Login | Sign Up</Link>
-                        </Button>
-                    </nav>
+                                </AccordionItem>
+                            </>
+                        ))
+                    }
                 </Accordion>
+                <Button asChild className={"mt-7 px-4 mx-auto"}>
+                    <Link href={"/auth"}>Login | Sign Up</Link>
+                </Button>
             </SheetContent>
         </Sheet>
     )
