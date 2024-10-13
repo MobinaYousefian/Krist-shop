@@ -1,5 +1,6 @@
 import {LogoImage} from "@/components/LogoImage";
 import {HamburgerManu} from "@/components/header/HamburgerManu";
+import {NavMenu} from "@/components/header/NavMenu";
 
 export const Header = () => {
     return (
@@ -8,9 +9,14 @@ export const Header = () => {
                 <LogoImage/>
             </div>
             <div className={"flex items-center"}>
+                <div className={"hidden md:block"}>
+                    <NavMenu/>
+                </div>
                 search
                 cart
-                <HamburgerManu/>
+                <div className={"md:hidden"}>
+                    <HamburgerManu/>
+                </div>
             </div>
         </header>
     )
