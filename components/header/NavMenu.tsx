@@ -1,13 +1,14 @@
 import {
-    NavigationMenu, NavigationMenuContent,
+    NavigationMenu,
+    NavigationMenuContent,
     NavigationMenuItem,
-    NavigationMenuList, NavigationMenuTrigger,
+    NavigationMenuList,
+    NavigationMenuTrigger,
     navigationMenuTriggerStyle
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import {menu} from "@/lib/headerMenuData";
 import Image from "next/image";
-import {AuthButton} from "@/components/header/AuthButton";
 
 export const NavMenu = () => {
     return (
