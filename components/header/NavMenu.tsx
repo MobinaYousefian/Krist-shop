@@ -6,6 +6,8 @@ import {
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import {menu} from "@/lib/headerMenuData";
+import Image from "next/image";
+import {AuthButton} from "@/components/header/AuthButton";
 
 export const NavMenu = () => {
     return (
@@ -21,12 +23,15 @@ export const NavMenu = () => {
                                             <Link href={item.url}>{item.title}</Link>
                                         </NavigationMenuTrigger>
                                         <NavigationMenuContent>
-                                            <ul className={"p-2"}>
+                                            <ul className={"px-3 py-4"}>
                                                 {
                                                     item.subMenu.map((subMenu) => (
                                                         <Link href={subMenu.url} key={subMenu.title} passHref>
-                                                            <li className={navigationMenuTriggerStyle()}>
-                                                                {subMenu.title}
+                                                            <li className={`${navigationMenuTriggerStyle()} pr-12`}>
+                                                                <div className={"flex items-center justify-between"}>
+                                                                    <Image src={subMenu.icon} alt={"icon"} width={20} height={20} className={"mr-3 opacity-60"}/>
+                                                                    <span>{subMenu.title}</span>
+                                                                </div>
                                                             </li>
                                                         </Link>
                                                     ))

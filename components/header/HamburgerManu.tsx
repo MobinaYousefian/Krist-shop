@@ -1,15 +1,15 @@
 import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet";
 import Image from "next/image";
 import Link from "next/link";
-import {Button} from "@/components/ui/button";
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {menu} from "@/lib/headerMenuData";
+import {AuthButton} from "@/components/header/AuthButton";
 
 export const HamburgerManu = () => {
     return (
         <Sheet>
-            <SheetTrigger className={"p-3"}>
-                <Image src={"radix-icons/hamburger-menu.svg"} alt={"hamburger-menu"} width={20} height={20} className={"sm:w-7"}/>
+            <SheetTrigger className={"flex items-center justify-center"}>
+                <Image src={"radix-icons/hamburger-menu.svg"} alt={"hamburger-menu"} width={20} height={20} className={"sm:w-6 sm:h-6"}/>
             </SheetTrigger>
             <SheetContent>
                 <Accordion collapsible type={"single"} className={"w-3/4 ml-3"}>
@@ -29,7 +29,8 @@ export const HamburgerManu = () => {
                                                             item.subMenu.map((subMenu, i) => (
                                                                 <Link href={subMenu.url} key={subMenu.title}
                                                                       passHref>
-                                                                    <li className={`text-sm font-medium py-3 sm:py-4 hover:text-rose-700 transition-all ${i < item.subMenu.length - 1 && "border-b"}`}>
+                                                                    <li className={`flex items-center text-sm font-medium py-3.5 sm:py-4 hover:text-rose-700 transition-all ${i < item.subMenu.length - 1 && "border-b"}`}>
+                                                                        <Image src={subMenu.icon} alt={"icon"} width={16} height={16} className={"mr-2.5 opacity-60"}/>
                                                                         {subMenu.title}
                                                                     </li>
                                                                 </Link>
@@ -48,9 +49,7 @@ export const HamburgerManu = () => {
                         ))
                     }
                 </Accordion>
-                <Button asChild className={"mt-7 px-4 mx-auto"}>
-                    <Link href={"/auth"}>Login | Sign Up</Link>
-                </Button>
+                <AuthButton size={"default"}/>
             </SheetContent>
         </Sheet>
     )
