@@ -9,7 +9,7 @@ export const Header = () => {
     return (
         <header className={"w-full flex justify-between items-center sticky top-0 z-20 backdrop-blur-md shadow px-4 sm:px-6 md:px-8 lg:px-9"}>
             <div className={"py-3 md:py-4"}>
-                <LogoImage/>
+                <LogoImage url={"/logo/kristLogo.svg"} className={"sm:w-16 lg:w-20"}/>
             </div>
             <div className={"hidden md:block"}>
                 <NavMenu/>

@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const LogoImage = () => {
+export const LogoImage = ({url, className} : {url: string, className: string}) => {
     return (
         <Link href="/">
-            <Image src={"/logo/kristLogo.svg"} alt={"Krist Logo"} width={48} height={48} className={"sm:w-16 lg:w-20"}/>
+            <Image src={url} alt={"Krist Logo"} width={48} height={48} className={className}/>
         </Link>
     )
 }
