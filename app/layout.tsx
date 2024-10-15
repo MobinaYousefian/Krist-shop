@@ -1,7 +1,13 @@
 import * as React from "react"
-import type { Metadata } from "next";
+import type {Metadata} from "next";
 import "./globals.css";
 import {Header} from "@/components/header/Header";
+import {Footer} from "@/components/footer/Footer";
+import dynamic from 'next/dynamic';
+
+const DynamicToaster = dynamic(() => import("../components/ui/toaster"), {
+    ssr : false
+})
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -21,12 +27,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-          // className={`${geistSans.variable}`}
-      >
-      <Header/>
-        {children}
-      </body>
+    <body
+        // className={`${geistSans.variable}`}
+    >
+    <Header/>
+    {children}
+    <DynamicToaster/>
+    <Footer/>
+    </body>
     </html>
   );
 }
