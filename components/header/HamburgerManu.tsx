@@ -1,4 +1,4 @@
-import {menu} from "@/lib/StaticData";
+import {menu} from "@/lib/staticData";
 import Image from "next/image";
 import Link from "next/link";
 import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet";

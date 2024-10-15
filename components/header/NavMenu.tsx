@@ -7,7 +7,7 @@ import {
     navigationMenuTriggerStyle
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import {menu} from "@/lib/headerMenuData";
+import {menu} from "@/lib/staticData";
 import Image from "next/image";
 
 export const NavMenu = () => {
