@@ -9,7 +9,7 @@ export const HamburgerManu = () => {
     return (
         <Sheet>
             <SheetTrigger className={"flex items-center justify-center"}>
-                <Image src={"/svgs/menu_24dp.svg"} alt={"hamburger-menu"} width={20} height={20} className={"sm:w-6 sm:h-6"}/>
+                <Image src={"/svgs/menu_24dp.svg"} alt={"hamburger-menu"} width={22} height={22} className={"sm:w-6 sm:h-6"}/>
             </SheetTrigger>
             <SheetContent>
                 <Accordion collapsible type={"single"} className={"w-3/4 ml-3"}>
