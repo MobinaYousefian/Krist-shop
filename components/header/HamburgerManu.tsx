@@ -1,15 +1,15 @@
-import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet";
+import {menu} from "@/lib/StaticData";
 import Image from "next/image";
 import Link from "next/link";
+import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet";
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
-import {menu} from "@/lib/headerMenuData";
 import {AuthButton} from "@/components/header/AuthButton";
 
 export const HamburgerManu = () => {
     return (
         <Sheet>
             <SheetTrigger className={"flex items-center justify-center"}>
-                <Image src={"radix-icons/hamburger-menu.svg"} alt={"hamburger-menu"} width={20} height={20} className={"sm:w-6 sm:h-6"}/>
+                <Image src={"/svgs/menu_24dp.svg"} alt={"hamburger-menu"} width={20} height={20} className={"sm:w-6 sm:h-6"}/>
             </SheetTrigger>
             <SheetContent>
                 <Accordion collapsible type={"single"} className={"w-3/4 ml-3"}>
