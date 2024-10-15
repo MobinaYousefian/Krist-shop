@@ -1,8 +1,8 @@
 import {Newsletter} from "@/components/footer/Newsletter";
 import {BrandInfo} from "@/components/footer/BrandInfo";
 import {FooterLinkList} from "@/components/footer/FooterLinkList";
-import {footerLinks1, footerLinks2, socialLogos} from "@/lib/staticData";
-import Image from "next/image";
+import {footerLinks1, footerLinks2} from "@/lib/staticData";
+import {InstagramLogoIcon, LinkedInLogoIcon, TwitterLogoIcon} from "@radix-ui/react-icons";
 
 export const Footer = () => {
     return (
@@ -19,11 +19,9 @@ export const Footer = () => {
                     @2023 Krist all rights are reserved
                 </p>
                 <div className={"flex items-start my-4 sm:my-0"}>
-                    {
-                        socialLogos.map((social) => (
-                            <Image src={social.url} alt={social.title} width={20} height={20} className={"sm:w-6 sm:h-6 mr-1.5 opacity-95 cursor-pointer"} key={social.title}/>
-                        ))
-                    }
+                    <InstagramLogoIcon className={"text-slate-50 sm:w-6 sm:h-6 mr-1.5 opacity-95 cursor-pointer"}/>
+                    <TwitterLogoIcon className={"text-slate-50 sm:w-6 sm:h-6 mr-1.5 opacity-95 cursor-pointer"}/>
+                    <LinkedInLogoIcon className={"text-slate-50 sm:w-6 sm:h-6 mr-1.5 opacity-95 cursor-pointer"}/>
                 </div>
             </div>
         </footer>
