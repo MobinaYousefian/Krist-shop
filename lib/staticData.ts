@@ -64,3 +64,18 @@ export const footerLinks2: footerLinks[] = [
         url: "/"
     }
 ];
+
+export const socialLogos : footerLinks[] = [
+    {
+        title: "Insatagram",
+        url: "/svgs/Instagram.svg"
+    },
+    {
+        title: "Twitter",
+        url : "/svgs/Twitter.svg"
+    },
+    {
+        title: "LinkedIn",
+        url: "/svgs/LinkedIn.svg"
+    }
+];

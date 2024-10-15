@@ -1,7 +1,8 @@
 import {Newsletter} from "@/components/footer/Newsletter";
 import {BrandInfo} from "@/components/footer/BrandInfo";
 import {FooterLinkList} from "@/components/footer/FooterLinkList";
-import {footerLinks1, footerLinks2} from "@/lib/staticData";
+import {footerLinks1, footerLinks2, socialLogos} from "@/lib/staticData";
+import Image from "next/image";
 
 export const Footer = () => {
     return (
@@ -12,7 +13,19 @@ export const Footer = () => {
                 <FooterLinkList title={"Service"} data={footerLinks2}/>
             </div>
             <Newsletter/>
-            <div className={"w-full h-0.5 border-b-slate-50 border-b opacity-25 my-7 mb-2"}/>
+            <div className={"w-full h-0.5 border-b-slate-50 border-b opacity-25 my-7 mb-5"}/>
+            <div className={"w-full flex flex-col sm:flex-row items-center sm:justify-between sm:items-start"}>
+                <p className={"opacity-75 text-xs"}>
+                    @2023 Krist all rights are reserved
+                </p>
+                <div className={"flex items-start my-4 sm:my-0"}>
+                    {
+                        socialLogos.map((social) => (
+                            <Image src={social.url} alt={social.title} width={20} height={20} className={"sm:w-6 sm:h-6 mr-1.5 opacity-95 cursor-pointer"} key={social.title}/>
+                        ))
+                    }
+                </div>
+            </div>
         </footer>
     )
 }
