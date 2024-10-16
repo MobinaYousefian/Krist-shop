@@ -2,7 +2,7 @@ import {Newsletter} from "@/components/footer/Newsletter";
 import {BrandInfo} from "@/components/footer/BrandInfo";
 import {FooterLinkList} from "@/components/footer/FooterLinkList";
 import {footerLinks1, footerLinks2} from "@/lib/staticData";
-import {InstagramLogoIcon, LinkedInLogoIcon, TwitterLogoIcon} from "@radix-ui/react-icons";
+import {FooterCopyRight} from "@/components/footer/FooterCopyRight";
 
 export const Footer = () => {
     return (
@@ -14,16 +14,7 @@ export const Footer = () => {
             </div>
             <Newsletter/>
             <div className={"w-full h-0.5 border-b-slate-50 border-b opacity-25 my-7 mb-5"}/>
-            <div className={"w-full flex flex-col sm:flex-row items-center sm:justify-between sm:items-start"}>
-                <p className={"opacity-75 text-xs"}>
-                    @2023 Krist all rights are reserved
-                </p>
-                <div className={"flex items-start my-4 sm:my-0"}>
-                    <InstagramLogoIcon className={"text-slate-50 sm:w-6 sm:h-6 mr-1.5 opacity-95 cursor-pointer"}/>
-                    <TwitterLogoIcon className={"text-slate-50 sm:w-6 sm:h-6 mr-1.5 opacity-95 cursor-pointer"}/>
-                    <LinkedInLogoIcon className={"text-slate-50 sm:w-6 sm:h-6 mr-1.5 opacity-95 cursor-pointer"}/>
-                </div>
-            </div>
+            <FooterCopyRight/>
         </footer>
     )
 }
