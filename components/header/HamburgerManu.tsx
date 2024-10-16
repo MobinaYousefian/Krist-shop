@@ -4,12 +4,13 @@ import Link from "next/link";
 import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet";
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {AuthButton} from "@/components/header/AuthButton";
+import {MenuIcon} from "lucide-react";
 
 export const HamburgerManu = () => {
     return (
         <Sheet>
             <SheetTrigger className={"flex items-center justify-center"}>
-                <Image src={"/svgs/menu_24dp.svg"} alt={"hamburger-menu"} width={22} height={22} className={"sm:w-6 sm:h-6"}/>
+                <MenuIcon size={20} className={"sm:w-6 sm:h-6"}/>
             </SheetTrigger>
             <SheetContent>
                 <Accordion collapsible type={"single"} className={"w-3/4 ml-3"}>

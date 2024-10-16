@@ -1,9 +1,9 @@
-import Image from "next/image";
+import {Search} from "lucide-react";
 
 export const SearchButton = () => {
     return (
         <button className={"block"}>
-            <Image src={"/svgs/search_24dp.svg"} alt={"Search"} width={22} height={22} className={"sm:w-6 sm:h-6 cursor-pointer"}/>
+            <Search size={20} className={"text-slate-700 sm:w-6 sm:h-6 cursor-pointer"}/>
         </button>
     )
 }

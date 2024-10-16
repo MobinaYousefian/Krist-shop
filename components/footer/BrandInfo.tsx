@@ -1,21 +1,26 @@
 import {LogoImage} from "@/components/LogoImage";
-import Image from "next/image";
+import {LucideMail, MapIcon, PhoneCall} from "lucide-react";
+import React, {JSX} from "react";
 
 interface infoList {
-    icon: string;
+    id: number;
+    icon: JSX.Element;
     description: string;
 }
 const infoList: infoList[] = [
     {
-        icon: "/svgs/phone_in_talk_24dp.svg",
+        id: 1,
+        icon: <PhoneCall size={20} className={"text-slate-50 sm:w-4"}/>,
         description: "(704) 555-0127",
     },
     {
-        icon: "/svgs/mail_24dp.svg",
+        id: 2,
+        icon: <LucideMail size={20} className={"text-slate-50 sm:w-4"}/>,
         description: "krist@example.com",
     },
     {
-        icon: "/svgs/location_on_24dp.svg",
+        id: 3,
+        icon: <MapIcon size={20} className={"text-slate-50 sm:w-4"}/>,
         description: "3891 Ranchview Dr. Richardson, California 62639",
     }
 ];
@@ -26,9 +31,9 @@ export const BrandInfo = () => {
             <LogoImage url={"/logo/kristlogo-white.svg"} className={"w-16 md:w-20 lg:w-24"}/>
             {
                 infoList.map((info) => (
-                    <div className={"flex items-start mt-4 opacity-80"} key={info.icon}>
-                        <Image src={info.icon} alt={"phone call"} width={20} height={20} className={"sm:w-6 sm:h-6"}/>
-                        <p className={"ml-1.5 text-xs"}>
+                    <div className={"flex items-start mt-4 opacity-80"} key={info.id}>
+                        {info.icon}
+                        <p className={"ml-2 text-xs"}>
                             {info.description}
                         </p>
                     </div>
