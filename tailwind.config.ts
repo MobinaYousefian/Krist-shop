@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type {Config} from "tailwindcss";
 
 const config: Config = {
     darkMode: ["class"],
@@ -16,7 +16,10 @@ const config: Config = {
   		},
   		colors: {},
   		keyframes: {
-  			'accordion-down': {
+			  'blink' : {
+				  '50%': { opacity: '0' },
+			  },
+			'accordion-down': {
   				from: {
   					height: '0'
   				},
@@ -35,7 +38,8 @@ const config: Config = {
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+			'blink': 'blink 0.9s infinite',
   		}
   	}
   },
