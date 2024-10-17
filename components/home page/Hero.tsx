@@ -2,10 +2,11 @@ import {Button} from "@/components/ui/button";
 import {ArrowRightIcon} from "lucide-react";
 import Link from "next/link";
 import {TypeWriterAnimation} from "@/components/home page/hero animations/TypeWriterAnimation";
+import {ImageChangeAnimation} from "@/components/home page/hero animations/ImageChangeAnimation";
 
 export const Hero = () => {
     return (
-        <section className={"w-full bg-[#f3f3f3] flex flex-col items-center sm:flex-row sm:justify-between sm:px-12 md:px-20 lg:px-36 xl:px-56"}>
+        <section className={"w-full bg-[#f3f3f3] flex flex-col items-center sm:flex-row sm:justify-between sm:px-9 md:px-20 lg:px-36 xl:px-56"}>
             <div className={"py-10 text-slate-900 text-center sm:text-left"}>
                 <p className={"font-semibold text-xl lg:text-2xl lg:mb-1"}>Classic Exclusive</p>
                 <h2 className={"font-black text-[1.75rem] h-10 lg:text-3xl lg:mb-1 flex justify-center sm:justify-start items-center"}>
@@ -19,7 +20,9 @@ export const Hero = () => {
                     </Button>
                 </Link>
             </div>
-            <div className={"bg-[url('/hero-girl.png')] bg-cover w-full max-w-xs h-[472px] sm:w-[45%]"}/>
+            <div className={"flex items-center justify-center w-full max-w-fit h-[464px] sm:w-[47%] md:w-1/2"}>
+                <ImageChangeAnimation/>
+            </div>
         </section>
     )
 }
